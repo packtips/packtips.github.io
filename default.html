@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>
+    {% if page.title == "Home" %}
+      PackTips - Tips for Running a Cub Scout Pack
+    {% else %}
+      PackTips - {{ page.title }}
+    {% endif %}
+  </title>
+  <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}" />
+</head>
+<body>
+  <header>
+    <h1><a href="{{ '/' | relative_url }}">PackTips</a></h1>
+    <nav>
+      <a href="{{ '/' | relative_url }}">Home</a> |
+      <a href="{{ '/tips/meeting' | relative_url }}">Pack Meeting Tips</a>
+    </nav>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <section id="comments">
+    <script src="https://utteranc.es/client.js"
+      repo="packtips/packtips.github.io"
+      issue-term="pathname"
+      label="comment"
+      theme="github-dark"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+
+  <footer>
+    <small>© {{ "now" | date: "%Y" }} PackTips — Built with GitHub Pages and Jekyll</small>
+  </footer>
+</body>
+</html>
