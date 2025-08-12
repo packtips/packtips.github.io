@@ -1,4 +1,6 @@
-title: PackTips
-markdown: kramdown
+title: "PackTips"
+description: "Tips for Running a Cub Scout Pack"
+baseurl: ""
+url: "https://packtips.github.io"
 theme: minima
-plugins: []
+markdown: kramdown

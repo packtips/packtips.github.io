@@ -1,0 +1,42 @@
+- title: Home
+  url: /
+
+- title: Pack Administration
+  children:
+    - title: Recruiting
+      url: /pack-admin/recruiting
+    - title: Getting Volunteers
+      url: /pack-admin/volunteers
+    - title: Being Cubmaster
+      url: /pack-admin/cubmaster
+
+- title: Pack Meetings
+  children:
+    - title: General Tips
+      url: /pack-meetings/general-tips
+    - title: Pack Meeting Ideas
+      children:
+        - title: Idea 1
+          url: /pack-meetings/ideas/idea-1
+        - title: Idea 2
+          url: /pack-meetings/ideas/idea-2
+
+- title: Pack Campouts
+  children:
+    - title: Logistics
+      url: /pack-campouts/logistics
+    - title: Activities
+      url: /pack-campouts/activities
+    - title: Campfire Program
+      url: /pack-campouts/campfire
+    - title: Food Planning
+      url: /pack-campouts/food
+
+- title: Pack Activities
+  children:
+    - title: Hikes
+      url: /pack-activities/hikes
+    - title: Scouting for Food
+      url: /pack-activities/scouting-for-food
+    - title: Parades
+      url: /pack-activities/parades

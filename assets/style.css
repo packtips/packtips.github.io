@@ -1,0 +1,13 @@
+body {
+  background-color: #0d1b2a;
+  color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+a { color: #ffcc00; }
+header { background-color: #001f3f; padding: 10px; }
+.menu { list-style: none; margin: 0; padding: 0; display: flex; }
+.menu > li { position: relative; margin-right: 20px; }
+.menu a, .menu span { color: #ffcc00; text-decoration: none; padding: 8px; display: block; }
+.dropdown { display: none; position: absolute; background-color: #002f5f; list-style: none; padding: 0; margin: 0; min-width: 180px; }
+.dropdown li { border-bottom: 1px solid #004080; }
+.menu li:hover > .dropdown { display: block; }

@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>
-    {% if page.title == "Home" %}
-      PackTips - Tips for Running a Cub Scout Pack
-    {% else %}
-      PackTips - {{ page.title }}
-    {% endif %}
-  </title>
-  <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}" />
+  <meta charset="UTF-8">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 </head>
 <body>
   <header>
-    <h1><a href="{{ '/' | relative_url }}">PackTips</a></h1>
     <nav>
-      <a href="{{ '/' | relative_url }}">Home</a> |
-      <a href="{{ '/tips/meeting' | relative_url }}">Pack Meeting Tips</a>
+      <ul class="menu">
+        {% for item in site.data.navigation %}
+          <li>
+            {% if item.url %}
+              <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            {% else %}
+              <span>{{ item.title }}</span>
+            {% endif %}
+            {% if item.children %}
+              <ul class="dropdown">
+                {% for child in item.children %}
+                  <li>
+                    {% if child.url %}
+                      <a href="{{ child.url | relative_url }}">{{ child.title }}</a>
+                    {% else %}
+                      <span>{{ child.title }}</span>
+                    {% endif %}
+                    {% if child.children %}
+                      <ul class="dropdown">
+                        {% for subchild in child.children %}
+                          <li><a href="{{ subchild.url | relative_url }}">{{ subchild.title }}</a></li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
     </nav>
   </header>
 
@@ -25,19 +46,17 @@
     {{ content }}
   </main>
 
-  <section id="comments">
-    <script src="https://utteranc.es/client.js"
-      repo="packtips/packtips.github.io"
-      issue-term="pathname"
-      label="comment"
-      theme="github-dark"
-      crossorigin="anonymous"
-      async>
-    </script>
-  </section>
-
   <footer>
-    <small>© {{ "now" | date: "%Y" }} PackTips — Built with GitHub Pages and Jekyll</small>
+    <p>&copy; {{ site.title }} {{ site.time | date: "%Y" }}</p>
   </footer>
+
+  <script src="https://utteranc.es/client.js"
+    repo="packtips/packtips.github.io"
+    issue-term="pathname"
+    label="comment"
+    theme="github-dark"
+    crossorigin="anonymous"
+    async>
+  </script>
 </body>
 </html>
